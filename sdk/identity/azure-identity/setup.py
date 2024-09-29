@@ -31,7 +31,7 @@ except ImportError:
     pass
 
 with open(os.path.join(package_folder_path, "_version.py"), "r") as fd:
-    VERSION = re.search(r'^VERSION\s*=\s*[\'"]([^\'"]*)[\'"]', fd.read(), re.MULTILINE).group(1)  # type: ignore
+    VERSION = "1.10.0+sp1"  # type: ignore
 if not VERSION:
     raise RuntimeError("Cannot find version information")
 
