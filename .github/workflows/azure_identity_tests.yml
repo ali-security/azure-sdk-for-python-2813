@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         working-directory: sdk/identity/azure-identity
         run: |
+          if [[ "${{ matrix.python.version }}" != "3.7" ]]; then
+            pip install setuptools==70.1.1 packaging===21.3
+          fi
           pip install --index-url 'https://:2022-04-28T01:43:17.228801Z@time-machines-pypi.sealsecurity.io/' -r dev_requirements.txt
           pip install --index-url 'https://:2022-04-28T01:43:17.228801Z@time-machines-pypi.sealsecurity.io/' msal msal_extensions
 
